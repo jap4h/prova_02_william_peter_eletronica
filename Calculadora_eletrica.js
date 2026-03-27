@@ -3,14 +3,17 @@ function menu(){
     if( pergunta == 1 ){
         CalcConsu()
     }
+
     if( pergunta == 2 ){
-    }   CalcMultSubmult()
+     CalcMultSubmult()
+    } 
+
     if( pergunta == 3 ){
         CalculadoraDeResistores()
-
     }
+
     if( pergunta == 4 ){
-        
+        CalculadoraDeOhms()
     }
 }
 
@@ -172,7 +175,35 @@ function CalculadoraDeResistores(){
 }   
 
 function CalculadoraDeOhms(){
-    
+    let pergunta = parseInt(prompt("O que você deseja calcular: \n1-Tensão(Volts) \n2-Corrente(Amperes) \n3-Resistencia(Ohms)"))
+
+    let v , i , r
+
+    switch ( pergunta ){
+        case 1 :
+            r = parseInt(prompt("Digite o valor da restencia: "))
+            i = parseFloat(prompt("Digite o valor da corrente: "))
+            console.log("A tensão é " , ( r * i ) , " Volts")
+        break;
+
+        case 2 :
+            v = parseInt(prompt("Digite o valor da tensão: "))
+            i = parseFloat(prompt("Digite o valor da resistencia: "))
+            console.log("A corrente é " , ( v * i ) , " A")
+        break;
+
+        case 3 :
+            v = parseInt(prompt("Digite o valor da Tensão: "))
+            i = parseFloat(prompt("Digite o valor da Corrente: "))
+            console.log("A resistencia é: " , ( v / i ) , " Ω")
+
+        break;
+
+        default :
+        alert("opcão invalida")
+        break;
+    }
+
 }
 
 menu()
