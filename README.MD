@@ -1,15 +1,22 @@
-Calculadora de Gasto Elétrico Diário/Mensal
-Este é um script simples em JavaScript (calceletrica) projetado para calcular o custo aproximado do uso de um eletrodoméstico ou item eletrônico, baseado na potência, horas de uso e valor da tarifa de energia.
+Calculadora Eletrica 
 
-Funcionalidades
-Conversão de Medida: Aceita entrada em Kilowatts (kW) ou Watts (W).
-Cálculo Diário: Calcula o custo em Reais baseado nas horas de uso.
-Cálculo Mensal: Projeta o custo baseado em 30 dias.
-Interatividade: Utiliza prompt para coletar dados e console.log para exibir o resultado.
+Funcionalidades: 
+O script possui varias funcões como:
 
-Como Funciona
-Escolha a medida: Digite 1 para kW ou 2 para W.
-Horas de uso: Digite quantas horas o item fica ligado por dia.
-Nome do item: Digite o nome (ex: "Chuveiro").
-Gasto: Digite a potência do item.
-Resultado: O script exibe o custo diário e mensal no console do navegador, considerando uma tarifa fixa de R$ 0,90 por kWh.
+1- Calculadora De Consumo: Calcula o gasto de energia eletrica diaria/mensal.
+
+2- Calculadora De Mult/Submult: Calcula valores entre escalas(g=giga , mega , quilo , unidade , mili , micro , nano , pico ).
+
+3- Calculadora De Resistores: Identifica valor de resistencia e tolerancia para resistores de 4 ou 5 faixas.
+
+4- Calculadora Da Lei De Ohm: Calcula tensão(V),Corrente(I) ou Resistencia(R) com base em dois valores conhecidos.
+
+5- Resistencia Equivalente(Req): Calcula a resistencia total em circuitos associados em série ou paralelo.
+
+Estrutura do Código
+menu(): Gerencia a navegação principal entre as ferramentas.
+CalcConsu(): Realiza o cálculo de custo de energia baseado em horas de uso e taxa da concessionária.
+CalcMultSubmult(): Utiliza um objeto de fatores multiplicadores para converter escalas técnicas.
+CalculadoraDeResistores(): Processa strings de cores para converter em valores numéricos de Ohm.
+CalculadoraDeOhms(): Aplica as fórmulas da Lei de Ohm (V = R * I).
+CalculadoraDeReqResistores(): Processa múltiplos resistores em circuitos série ou paralelo.

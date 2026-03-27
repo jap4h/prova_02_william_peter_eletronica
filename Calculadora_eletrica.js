@@ -1,5 +1,5 @@
 function menu(){
-    let pergunta = parseInt(prompt("Qual função deseja utilizar: \n1-Calculadora de consumo \n2-Calculadora de Mult/submult \n3-Calculadora de resistores \n4-Calculadora de Ohns"))
+    let pergunta = parseInt(prompt("Qual função deseja utilizar: \n1-Calculadora de consumo \n2-Calculadora de Mult/submult \n3-Calculadora de resistores \n4-Calculadora de Ohns \n5-Calculadora de Resistore(paralelo/serie)"))
     if( pergunta == 1 ){
         CalcConsu()
     }
@@ -15,8 +15,10 @@ function menu(){
     if( pergunta == 4 ){
         CalculadoraDeOhms()
     }
+    if( pergunta == 5 ){
+        CalculadoraDeReqResistores()
+    }
 }
-
 
 function CalcConsu(){
     let conversao = parseInt(prompt("Em qual medida deseja converter?: \n1-KiloWatts \n2-Watts"))
@@ -41,7 +43,6 @@ function CalcConsu(){
     }
 }   
 
-
 function CalcMultSubmult(){
     const fatores = {
         1:  1e9,   // 1.000.000.000
@@ -54,7 +55,6 @@ function CalcMultSubmult(){
         8:  1e-12  // 0.000000000001
     };
 
-
     let tipoconversao = prompt("\nEscolha a unidade de conversão : \
     \n ampere \n volt \n ohm \n watt: ")
     let escala = parseInt(prompt("Digite a escala \
@@ -66,8 +66,6 @@ function CalcMultSubmult(){
 
     console.log("Seu resultado é: " , calculo , tipoconversao)
 }
-
-
 
 function CalculadoraDeResistores(){
     let quantidadesdefaixas = prompt("O resistor possui 4 ou 5 faixas: ")
@@ -117,6 +115,7 @@ function CalculadoraDeResistores(){
         corparamultiplicar = cordafaixa3
         corparatolerancia = cordafaixa4
     }
+
     else {
         let terceirodigito = ""
         if ( cordafaixa3 == "preto") { terceirodigito = "0" }
@@ -135,7 +134,6 @@ function CalculadoraDeResistores(){
         corparatolerancia = cordafaixa5
 
     }
-
 
     let multiplicadornumerico = 1
     if ( corparamultiplicar == "preto" ) { multiplicadornumerico = 1 }
@@ -204,6 +202,29 @@ function CalculadoraDeOhms(){
         break;
     }
 
+}
+
+function CalculadoraDeReqResistores(){
+    let tipo = parseInt(prompt("1-Em serie\n2-Paralelo: "))
+    let qtdd = parseInt(prompt("Qual a quantidade de resistores: "))
+    let req = 0
+    let somainversos = 0 
+
+    for ( cont = 0 ; cont < qtdd ; cont++ ){
+    let r = parseFloat(prompt("O valor do resistor: " , cont , " "))
+
+    if ( tipo == 1 ){
+        req = req + r 
+    }
+    else{
+        somainversos = somainversos + ( 1 / r )
+    }
+
+    }
+    if ( tipo ==2 ){
+        req = 1 / somainversos
+    }
+    console.log("O resultado é: " , req.toFixed(4) , " Ω")
 }
 
 menu()
