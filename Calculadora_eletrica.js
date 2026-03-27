@@ -64,8 +64,100 @@ function CalcMultSubmult(){
     console.log("Seu resultado é: " , calculo , tipoconversao)
 }
 function CalculadoDeResistores(){
+    let quantidadesdefaixas = prompt("O resistor possui 4 ou 5 faixas: ")
     
-}
+    let cordafaixa1 = prompt("\nCor da 1° faixa: ")
+    let cordafaixa2 = prompt("\nCor da 2° faixa: ")
+    let cordafaixa3 = prompt("\nCor da 3° faixa: ")
+    let cordafaixa4 = prompt("\nCor da 4° faixa: ")
+    let cordafaixa5 = ""
+
+    if ( quantidadesdefaixas == "5" ){
+        cordafaixa5 = prompt("\nCor da 5° faixa: ")
+    }
 
 
+    let primeirodigito = ""
+    if ( cordafaixa1 == "preto") { primeirodigito = "0" }
+    if ( cordafaixa1 == "marrom") { primeirodigito = "1" }
+    if ( cordafaixa1 == "vermelho") { primeirodigito = "2" }
+    if ( cordafaixa1 == "laranja") { primeirodigito = "3" }
+    if ( cordafaixa1 == "amarelo") { primeirodigito = "4" }
+    if ( cordafaixa1 == "verde") { primeirodigito = "5" }
+    if ( cordafaixa1 == "azul") { primeirodigito = "6" }
+    if ( cordafaixa1 == "violeta") { primeirodigito = "7" }
+    if ( cordafaixa1 == "cinza") { primeirodigito = "8" }
+    if ( cordafaixa1 == "branco") { primeirodigito = "9" }
+    
+
+    let segundodigito = ""
+    if ( cordafaixa2 == "preto") { segundodigito = "0" }
+     if ( cordafaixa2 == "marrom") { segundodigito = "1" }
+    if ( cordafaixa2 == "vermelho") { segundodigito = "2" }
+    if ( cordafaixa2 == "laranja") { segundodigito = "3" }
+    if ( cordafaixa2 == "amarelo") { segundodigito = "4" }
+    if ( cordafaixa2 == "verde") { segundodigito = "5" }
+    if ( cordafaixa2  == "azul") { segundodigito = "6" }
+    if ( cordafaixa2 == "violeta") { segundodigito = "7" }
+    if ( cordafaixa2 == "cinza") { segundodigito = "8" }
+    if ( cordafaixa2 == "branco") { segundodigito = "9" }
+
+    let valordosdigitosagrupados = ""
+    let corparamultiplicar = ""
+    let corparatolerancia = ""
+
+    if ( quantidadesdefaixas == "4" ){
+        valordosdigitosagrupados = primeirodigito + segundodigito
+        corparamultiplicar = cordafaixa3
+        corparatolerancia = cordafaixa4
+    }
+    else {
+        let terceirodigito = ""
+        if ( cordafaixa3 == "preto") { terceirodigito = "0" }
+        if ( cordafaixa3 == "marrom") { terceirodigito = "1" }
+        if ( cordafaixa3 == "vermelho") { terceirodigito = "2" }
+        if ( cordafaixa3 == "laranja") { terceirodigito = "3" }
+        if ( cordafaixa3 == "amarelo") { terceirodigito = "4" }
+        if ( cordafaixa3 == "verde") { terceirodigito = "5" }
+        if ( cordafaixa3 == "azul") { terceirodigito = "6" }
+        if ( cordafaixa3 == "violeta") { terceirodigito = "7" }
+        if ( cordafaixa3 == "cinza") { terceirodigito = "8" }
+        if ( cordafaixa3 == "branco") { terceirodigito = "9" }
+        
+        valordosdigitosagrupados = primeirodigito + segundodigito + terceirodigito
+        corparamultiplicar = cordafaixa3
+        corparatolerancia = cordafaixa4
+
+    }
+
+
+    let multiplicadornumerico = 1
+    if ( corparamultiplicar == "preto" ) { multiplicadornumerico = 1 }
+    if ( corparamultiplicar == "marrom" ) { multiplicadornumerico = 10 }
+    if ( corparamultiplicar == "vermelho" ) { multiplicadornumerico = 100 }
+    if ( corparamultiplicar == "laranja" ) { multiplicadornumerico = 1000 }
+    if ( corparamultiplicar == "amarelo" ) { multiplicadornumerico = 10000 }
+    if ( corparamultiplicar == "verde" ) { multiplicadornumerico = 100000 }
+    if ( corparamultiplicar == "azul" ) { multiplicadornumerico = 1000000 }
+    if ( corparamultiplicar == "violeta" ) { multiplicadornumerico = 10000000 }
+    if ( corparamultiplicar == "dourado" ) { multiplicadornumerico = 0.1 }
+    if ( corparamultiplicar == "pratedo" ) { multiplicadornumerico = 0.01 }
+
+    let valordatoleranciaporcentagem = ""
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "1%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "2%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.5%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.25%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.1%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.05%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "5%"}
+    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "10%"}
+
+    let resultadocalculadoemohms = Number(valordosdigitosagrupados) * multiplicadornumerico
+    let textofnalformatado = resultadocalculadoemohms + " Ω"
+
+    if ( resultadocalculadoemohms >= 1000000){
+        
+    }
+}   
 menu()
