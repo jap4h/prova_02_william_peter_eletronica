@@ -4,10 +4,10 @@ function menu(){
         CalcConsu()
     }
     if( pergunta == 2 ){
-        CalcMultSubmult()
-    }
+    }   CalcMultSubmult()
     if( pergunta == 3 ){
-        
+        CalculadoraDeResistores()
+
     }
     if( pergunta == 4 ){
         
@@ -63,7 +63,10 @@ function CalcMultSubmult(){
 
     console.log("Seu resultado é: " , calculo , tipoconversao)
 }
-function CalculadoDeResistores(){
+
+
+
+function CalculadoraDeResistores(){
     let quantidadesdefaixas = prompt("O resistor possui 4 ou 5 faixas: ")
     
     let cordafaixa1 = prompt("\nCor da 1° faixa: ")
@@ -125,8 +128,8 @@ function CalculadoDeResistores(){
         if ( cordafaixa3 == "branco") { terceirodigito = "9" }
         
         valordosdigitosagrupados = primeirodigito + segundodigito + terceirodigito
-        corparamultiplicar = cordafaixa3
-        corparatolerancia = cordafaixa4
+        corparamultiplicar = cordafaixa4
+        corparatolerancia = cordafaixa5
 
     }
 
@@ -145,19 +148,31 @@ function CalculadoDeResistores(){
 
     let valordatoleranciaporcentagem = ""
     if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "1%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "2%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.5%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.25%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.1%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "0.05%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "5%"}
-    if ( corparatolerancia == "marrom" ) {valordatoleranciaporcentagem = "10%"}
+    if ( corparatolerancia == "vermelho" ) {valordatoleranciaporcentagem = "2%"}
+    if ( corparatolerancia == "verde" ) {valordatoleranciaporcentagem = "0.5%"}
+    if ( corparatolerancia == "azul" ) {valordatoleranciaporcentagem = "0.25%"}
+    if ( corparatolerancia == "violeta" ) {valordatoleranciaporcentagem = "0.1%"}
+    if ( corparatolerancia == "cinza" ) {valordatoleranciaporcentagem = "0.05%"}
+    if ( corparatolerancia == "dourado" ) {valordatoleranciaporcentagem = "5%"}
+    if ( corparatolerancia == "prateado" ) {valordatoleranciaporcentagem = "10%"}
 
     let resultadocalculadoemohms = Number(valordosdigitosagrupados) * multiplicadornumerico
     let textofnalformatado = resultadocalculadoemohms + " Ω"
 
     if ( resultadocalculadoemohms >= 1000000){
-        
+        textofnalformatado
     }
+    else if( resultadocalculadoemohms >= 1000000 ){
+        textofnalformatado = ( resultadocalculadoemohms / 1000 ) + " kΩ" 
+    }
+
+    document.write("<h1>Resultado do Calculo</h1>")
+    document.write("O valor da resistencia é: " + textofnalformatado)
+    document.write("<br>Tolerancia: " + valordatoleranciaporcentagem)
 }   
+
+function CalculadoraDeOhms(){
+    
+}
+
 menu()
